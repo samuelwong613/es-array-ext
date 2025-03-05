@@ -1,0 +1,33 @@
+{
+  "name": "es-array-ext",
+  "version": "0.0.1",
+  "description": "Native array extensions for javascript and typescript.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node .",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "array",
+    "prototype",
+    "ext",
+    "extension",
+    "extensions",
+    "js",
+    "javascript",
+    "ts",
+    "typescript",
+    "es",
+    "ECMAscript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samuelwong613/es-array-ext.git"
+  },
+  "author": "samuelwong <samuelwong613@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}

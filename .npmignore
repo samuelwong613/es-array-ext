@@ -1,13 +1,18 @@
 # Node.js dependencies
 node_modules/
 
-# Build output
-dist/
+# Soruce Code
+src/
+*.ts
 
-# TypeScript compiled files
-*.js
-*.js.map
-*.d.ts
+# Test
+test/
+
+# Config
+.npmignore
+.gitignore
+package-lock.json
+tsconfig.json
 
 # Logs
 logs
