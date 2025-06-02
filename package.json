@@ -3,13 +3,34 @@
   "version": "0.0.1",
   "description": "Native array extensions for javascript and typescript.",
   "main": "dist/index.js",
+  "exports":{
+    ".": "./dist/index.js",
+    "./clean": "./dist/clean.js"
+  },
   "scripts": {
     "start": "node .",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "array",
+    "chunk",
+    "distinct",
+    "equalTo",
+    "notInArray",
+    "inArray",
+    "or",
+    "xor",
+    "joinArray",
+    "insert",
+    "zip",
+    "count",
+    "group",
+    "max",
+    "shuffle",
+    "sample",
+    "padStart",
+    "padEnd",
     "prototype",
     "ext",
     "extension",
@@ -23,11 +44,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/samuelwong613/es-array-ext.git"
+    "url": "https://github.com/samuelwong613/es-promise-ext.git"
   },
   "author": "samuelwong <samuelwong613@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "jest": "^29.7.0",
     "typescript": "^5.8.2"
   }
 }

@@ -9,6 +9,9 @@ dist/
 *.js.map
 *.d.ts
 
+# Test
+!*.test.js
+
 # Logs
 logs
 *.log

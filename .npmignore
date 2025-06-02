@@ -3,7 +3,6 @@ node_modules/
 
 # Soruce Code
 src/
-*.ts
 
 # Test
 test/
