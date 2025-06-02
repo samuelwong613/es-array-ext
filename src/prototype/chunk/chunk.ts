@@ -19,18 +19,20 @@ export type func<T> = (index: number, offset: number, row: number, column: numbe
  * [1,2,3,4,5].chunk(2, () => null)   
  * // return [[1,2],[3,4],[5,null]]
  */
- export default function chunk<T>(array: Array<T>, size: number, fillInFunction: func<T>): Array<Array<T>> {
+ export default function chunk<T>(array: Array<T>, size: number, fillInFunction?: func<T>): Array<Array<T>> {
 	if (array == null)
 		throw new TypeError('Array.prototype.chunk called on null or undefined');
+  if (!(array instanceof Array))
+    throw TypeError('Array.prototype.chunk called on a non-Array instance');
 	if (!Number.isInteger(size) || size <= 0)
-		throw new TypeError('Array.prototype.chunk parameter 1 must be a positive integer');
-  if (typeof fillInFunction !== 'function')
-    throw new TypeError('Array.prototype.chunk parameter 2 must be a function');
+		throw new TypeError('Array.prototype.chunk size must be a positive integer');
+  if (fillInFunction !== undefined && typeof fillInFunction !== 'function')
+    throw new TypeError('Array.prototype.chunk fillInFunction must be a function');
 
 	const fillingInArray = [];
   const missingSize = (size - array.length % size) % size;
-  for (let i=0; i<missingSize; i++)
-    fillingInArray.push(fillInFunction(array.length+i, i, Math.ceil(array.length/size), i+size-missingSize));	
+  for (let i=0; i<missingSize && fillInFunction; i++)
+    fillingInArray.push(fillInFunction(array.length+i, i, Math.floor(array.length/size), i+size-missingSize));	
 		
   const newArray = [];
 	for (var idx = 0; idx < array.length; idx += size){
