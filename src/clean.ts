@@ -1,0 +1,1 @@
+export {default as arrayCreate} from "./create/create"
